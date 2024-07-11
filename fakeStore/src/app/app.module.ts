@@ -8,13 +8,15 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NotFoundComponent,
-    NavbarComponent
+    NavbarComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
