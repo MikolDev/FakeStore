@@ -1,0 +1,12 @@
+<td>
+    <img [src]="product?.image" [alt]="product?.title" class="p-2">
+</td>
+<td>{{ product?.title }}</td>
+<td>{{ product?.category }}</td>
+<td>{{ product?.price }} </td>
+<td>Rating: @if(product?.rating?.rate) {
+    {{ product?.rating?.rate}}
+} @else {
+    no rating
+}
+</td>

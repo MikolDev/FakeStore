@@ -1,12 +1,12 @@
 @use '../../../styles';
 
 a {
-    background-color: styles.$orange;
     color: white;
     font-size: 1.5rem;
 }
 
 a:hover {
     background-color: styles.$beige;
-    transition: 1s;
+    color: grey;
+    transition: 0.8s;
 }

@@ -1,0 +1,27 @@
+<div class="modal-header">
+    <h4 class="modal-title">New product</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input formControlName="title" type="text" class="form-control" id="title" placeholder="Enter title">
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <input formControlName="category" type="text" class="form-control" id="category" placeholder="Enter category">
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input formControlName="price" type="number" class="form-control" id="price" placeholder="Enter price">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea formControlName="description" class="form-control" id="description" rows="3" placeholder="Enter description"></textarea>
+        </div>
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary submit-button">Submit</button>
+        </div>
+    </form>
+</div>

@@ -1,1 +1,17 @@
-<p>shop-list works!</p>
+<div class="container list-container">
+    <div class="list-header d-flex p-2 justify-content-end">
+        <button (click)="addProduct()" class="btn btn-primary">Add product</button>
+    </div>
+    <div class="table-wrapper">
+        <table class="table">
+            <thead>
+            </thead>
+            <tbody>
+                @for (product of products; track product) {
+                    <tr app-shop-list-row [product]="product"></tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

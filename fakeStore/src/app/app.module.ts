@@ -1,14 +1,18 @@
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
+import { AddProductFormComponent } from './modals/add-product-form/add-product-form.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './pages/home/home.component';
-import { NgModule } from '@angular/core';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { RouterModule } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './pages/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -16,15 +20,20 @@ import { HeaderComponent } from './components/header/header.component';
     HomeComponent,
     NotFoundComponent,
     NavbarComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddProductFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideAnimationsAsync('noop')
   ],
   bootstrap: [AppComponent]
 })
