@@ -10,7 +10,11 @@
         </div>
         <div class="mb-3">
             <label for="category" class="form-label">Category</label>
-            <input formControlName="category" type="text" class="form-control" id="category" placeholder="Enter category">
+            <select formControlName="category" class="form-control" id="category">
+                @for(category of categories; track category) {
+                    <option [value]="category">{{ category }}</option>
+                }
+            </select>
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Price</label>
