@@ -10,6 +10,8 @@ import { Product } from '../types/product';
 export class ProductListService {
   private products: Product[] = [];
   private productsSubject: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>(this.products);
+  private isCategorySet: boolean = false;
+  private currentCategory: string = '';
 
   constructor(private apiService: ApiService) {
     this.loadProducts();
@@ -36,7 +38,23 @@ export class ProductListService {
 
 
   filterProducts(substring: string) {
-    const filteredProducts =  this.products.filter(product => product.title.toLowerCase().includes(substring.toLowerCase()));
+    const filteredProducts =  this.products.filter(product => 
+      this.isCategorySet ?
+      product.title.toLowerCase().includes(substring.toLowerCase()) && product.category == this.currentCategory
+      : product.title.toLowerCase().includes(substring.toLowerCase())
+    );
     this.productsSubject.next(filteredProducts);
+  }
+
+  setCategory(cat: string) {
+    if (cat !== 'all') {
+      this.isCategorySet = true;
+      this.currentCategory = cat;
+      const categorizedProducts =  this.products.filter(product => product.category == cat);
+      this.productsSubject.next(categorizedProducts);
+    } else {
+      this.isCategorySet = false;
+      this.productsSubject.next(this.products)
+    }
   }
 }

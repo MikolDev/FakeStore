@@ -5,8 +5,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-add-product-form',
-  templateUrl: './add-product-form.component.html',
-  styleUrl: './add-product-form.component.scss'
+  templateUrl: './add-product-form.component.html'
 })
 export class AddProductFormComponent {
   form: FormGroup;

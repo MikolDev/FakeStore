@@ -1,3 +1,4 @@
+import { CategorySelectComponent } from '../../components/category-select/category-select.component';
 import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { NgModule } from '@angular/core';
@@ -17,7 +18,8 @@ import { ShopRoutingModule } from './shop-routing.module';
     ShopRoutingModule,
     MatTableModule,
     RatingBarComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    CategorySelectComponent
 ],
   exports: [
     ShopListComponent

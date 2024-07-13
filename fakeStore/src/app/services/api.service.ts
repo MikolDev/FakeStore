@@ -9,6 +9,7 @@ import { Product } from '../types/product';
 })
 export class ApiService {
   private allProductsUrl = 'https://fakestoreapi.com/products';
+  private allCategoriesUrl = 'https://fakestoreapi.com/products/categories';
 
   constructor(private http: HttpClient) { }
 
@@ -17,6 +18,14 @@ export class ApiService {
       .pipe(
         tap((products) => { return products }),
         catchError(this.handleError<Product[]>('getAllProducts', []))
+      );
+  }
+
+  fetchAllCategories(): Observable<string[]> {
+    return this.http.get<string[]>(this.allCategoriesUrl)
+      .pipe(
+        tap((categories) => { return categories }),
+        catchError(this.handleError<string[]>('getAllCategories', []))
       );
   }
 
