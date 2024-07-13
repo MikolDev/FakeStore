@@ -9,28 +9,10 @@ import { Product } from '../types/product';
 })
 export class ApiService {
   private allProductsUrl = 'https://fakestoreapi.com/products';
-  private products: Product[] = [];
 
-  constructor(private http: HttpClient) {
-    this.initProducts();
-  }
+  constructor(private http: HttpClient) { }
 
-  private initProducts() {
-    this.fetchAllProducts().subscribe((products) => {
-      this.products = products;
-    })
-  }
-
-  getProducts() {
-    return this.products;
-  }
-
-  addProduct(product: Product) {
-    // here you could send api request to add a product to database
-    this.products.unshift(product);
-  }
-
-  private fetchAllProducts(): Observable<Product[]> {
+  fetchAllProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.allProductsUrl)
       .pipe(
         tap((products) => { return products }),

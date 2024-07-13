@@ -7,7 +7,7 @@
             <thead>
             </thead>
             <tbody>
-                @for (product of products; track product) {
+                @for (product of products$ | async; track product) {
                     <tr app-shop-list-row [product]="product"></tr>
                 }
             </tbody>
