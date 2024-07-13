@@ -3,10 +3,11 @@
 </td>
 <td>{{ product?.title }}</td>
 <td>{{ product?.category }}</td>
-<td>{{ product?.price }} </td>
-<td>Rating: @if(product?.rating?.rate) {
-    {{ product?.rating?.rate}}
-} @else {
-    no rating
-}
+<td>${{ product?.price }} </td>
+<td>
+    @if(product?.rating?.rate) {
+        <app-rating-bar [rating]="product?.rating?.rate!"></app-rating-bar>
+    } @else {
+        no rating
+    }
 </td>

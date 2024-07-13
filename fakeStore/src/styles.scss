@@ -40,6 +40,8 @@ $fakeStore-theme: mat.define-light-theme((
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
 
+@import 'ngx-bar-rating/themes/br-default-theme';
+
 $dark-blue: #131842;
 $orange: #E68369;
 $coffee: #ECCEAE;

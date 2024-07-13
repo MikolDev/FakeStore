@@ -26,7 +26,6 @@ export class AddProductFormComponent {
 
   onSubmit() {
     if (this.form.valid) {
-      console.log(this.form.value)
       this.activeModal.close(this.form.value);
     } else {
       console.log('form is not valid')

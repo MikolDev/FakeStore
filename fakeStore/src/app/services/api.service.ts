@@ -28,7 +28,6 @@ export class ApiService {
   addProduct(product: Product) {
     // here you could send api request to add a product to database
     this.products.unshift(product);
-    console.log(this.products)
   }
 
   private fetchAllProducts(): Observable<Product[]> {
