@@ -25,12 +25,18 @@ export class ProductListService {
   }
 
   getProducts() {
-    return this.productsSubject.asObservable();
+   return this.productsSubject.asObservable();
   }
 
   addProduct(product: Product) {
     // here you could call a method from api service to send a product to database and add a product to array depending on response from api
     this.products.unshift(product);
     this.productsSubject.next(this.products);
+  }
+
+
+  filterProducts(substring: string) {
+    const filteredProducts =  this.products.filter(product => product.title.toLowerCase().includes(substring.toLowerCase()));
+    this.productsSubject.next(filteredProducts);
   }
 }
